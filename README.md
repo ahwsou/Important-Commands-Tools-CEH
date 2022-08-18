@@ -1,5 +1,3 @@
-# Important-Commands-Tools-CEH
-
 #1: Footprinting and Reconnaissance
 
 	>	Site Details : Netcraft.com, search.censys.io
