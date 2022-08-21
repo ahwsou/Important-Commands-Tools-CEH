@@ -21,6 +21,8 @@ certifiedhacker.com
 > show domains
 > To view the entire marketplace repo type: marketplace search
 > marketplace install all
+
+*********Gather some subdomains & hosts
 > Installing a specific module: 
 marketplace install hackertarget
 > modules load hackertarget
@@ -30,7 +32,7 @@ info
 > run
 > show hosts
 
-You can use another modules to harvest more hosts, such as brute_hosts.
+*********You can use another modules to harvest more hosts, such as brute_hosts.
 > marketplace install recon/domain-hosts/brute_hosts
 > modules load recon/domain-hosts/brute_hosts
 > Display options for the module:
@@ -38,7 +40,8 @@ info
 > options set SOURCE certifiedhacker.com
 > run
 
-Install the reporting module to report in html format.
+*********Install the reporting module to report in html format.
+> Create Workspace first
 > marketplace install reporting/html
 > modules load reporting/html
 > Display options for the module:
@@ -46,6 +49,24 @@ info
 > options set CREATOR <your-name>
 options set CUSTOMER <Customer_name>
 options set FILENAME /root/Desktop/CE-Results.html
+> run
+
+*********Extract contact available in the domain.
+The module selected to perform this technique uses the ARIN Whois RWS to harvest POC data from whois queries for the given domain.
+> Create Workspace first
+> Install and load the module:
+marketplace install recon/domains-contacts/whois_pocs
+> modules load recon/domains-contacts/whois_pocs
+> Display options for the module:
+info
+> options set SOURCE facebook.com
+> run
+
+*********Search the existence of user profiles in various websites
+> Create Workspace first
+> marketplace install recon/profiles-profiles/profiler
+> modules load recon/profiles-profiles/profiler
+> options set SOURCE <person_name>
 > run
 
 ---------------------------------------------------------------------------------------------------------------------
