@@ -1,3 +1,4 @@
+------------------------------------------------------------BASIC---------------------------------------------------------------------------
 >	Site Details : Netcraft.com, search.censys.io
 >	Person Details: PeekYou.com
 >	Email Harvesting: Parrot Security->Mate Terminal (theHarvester -d abcd.com -l 500 -b baidu )
