@@ -5,7 +5,9 @@
 > Search in Darknet: Tor Browser
 >	Gather information of a website: 
   ping www.abcd.com -n 1 -f -l 1500 (count of ping, DF set , packet size)
+  ping www.abcd.com -n 1 -i 20 (count of ping, TTL Value)
 >	Gather a wordlist from the target website: cewl -d 2 -m 5 www.abcd.com
+> Finding LBs(Loadbalancers): lbd <web-site> :Command for Linux , nslookpup <web-site> : command for windows
 > Getting DNS Info, Nameservers :
   dig <site>
   nslookup
@@ -13,6 +15,24 @@
     set type=cname >  web_site
     set type=cname >  web_site
     set type=mx > web_site
+    
+ > NetCat Webserver Foot Printing
+   nc -vv <web-site> <port#>
+	- Enter 2 times
+	- GET / HTTP/1.0
+
+> TELNET Webserver Foot Printing
+  telnet <web-site> <port#>
+	- Enter 2 times
+	- GET / HTTP/1.0
+
+> TCP Dump  
+tcpdump -i eth0 -v src 1.1.1.1 and dst 2.2.2.2
+tcpdump -i eth0 -v port 80 and tcp
+tcpdump -i eth0 -v src port 443
+tcpdump -i eth0 -v host www.google.com
+tcpdump -i eth0 -v tcp and net 1.1.1.1/24 : For TCP traffic of entire network range
+tcpdump -w /root/Desktop/tcpdump1.pcap -i eth0 -v src 1.1.1.1
 ------------------------------------------------------------BASIC END---------------------------------------------------------------------------
 
 ------------------------------------------------------------OSRframework START------------------------------------------------------------------
