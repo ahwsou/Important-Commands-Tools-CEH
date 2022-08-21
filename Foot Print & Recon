@@ -1,0 +1,52 @@
+>	Site Details : Netcraft.com, search.censys.io
+>	Person Details: PeekYou.com
+>	Email Harvesting: Parrot Security->Mate Terminal (theHarvester -d abcd.com -l 500 -b baidu )
+> Search in Darknet: Tor Browser
+>	Gather information of a website: ping www.abcd.com -n 1 -f -l 1500 (count of ping, DF set , packet size)
+>	Gather a wordlist from the target website: cewl -d 2 -m 5 www.abcd.com
+----------------------------------------------------------------------------------------------------------------------------
+##Recon-ng -->
+> Open the terminal and type recon-ng
+> help
+> Create a new workspace:
+workspaces create CEH
+
+> How to select a workspace:
+workspaces select <workspace_name>
+
+> Add the target domain to perform a network recon:
+db insert domains
+certifiedhacker.com
+
+> show domains
+> To view the entire marketplace repo type: marketplace search
+> marketplace install all
+> Installing a specific module: 
+marketplace install hackertarget
+> modules load hackertarget
+> Display options for the module:
+info
+> options set SOURCE certifiedhacker.com
+> run
+> show hosts
+
+You can use another modules to harvest more hosts, such as brute_hosts.
+> marketplace install recon/domain-hosts/brute_hosts
+> modules load recon/domain-hosts/brute_hosts
+> Display options for the module:
+info
+> options set SOURCE certifiedhacker.com
+> run
+
+Install the reporting module to report in html format.
+> marketplace install reporting/html
+> modules load reporting/html
+> Display options for the module:
+info
+> options set CREATOR <your-name>
+options set CUSTOMER <Customer_name>
+options set FILENAME /root/Desktop/CE-Results.html
+> run
+
+---------------------------------------------------------------------------------------------------------------------
+
