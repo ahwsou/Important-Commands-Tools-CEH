@@ -117,3 +117,62 @@ info
 
 ----------------------------------------------------------Recon-ng  END-----------------------------------------------------------
 
+----------------------------------------------------------MetaSpoilt  START-------------------------------------------------------
+***********Initalize MSFCONSOLE
+Start PostgreSQL database service to link with Metasploit:
+> service postgresql start
+
+Now type msfconsole to launch Metasploit.
+> msfconsole
+
+Check if Metasploit is connected to the database successfully:
+> db_status
+If Output is this then do below : [*] postgresql selected, no connection
+
+First exist from MSF console
+> exit
+
+Initiate the database,
+> msfdb init
+
+Restart Service
+> service postgresql restart
+
+Start Metasploit again and run the db_status to check the database status:
+> msfconsole
+> db_status
+
+**********Find live Hosts with nmap and feed to msf DB
+Do the below in msfconsole >>
+> nmap -O -oX Test ip_address/24
+
+We can import the Nmap results from the database:
+> db_import Test
+
+To see the hosts and their details discovered by Nmap type:
+> hosts
+
+OR
+The db_nmap start the Nmap scan and the results would than be stored automatically in our database.
+> db_nmap -O ip_address/24
+> hosts
+
+Type services or db_services to get the whole list of the services running on the host.
+> services / db_services
+
+**********Scan for open ports and services
+> search portscan
+> use scanner/portscan/syn
+> show options
+> set RHOSTS ip_address
+> set THREADS 100
+> run
+
+*********Find out the SMB version
+> use scanner/smb/smb_version
+> use scanner/portscan/syn
+> show options
+> set RHOSTS ip_address
+> set THREADS 100
+> run
+----------------------------------------------------------MetaSpoilt  END---------------------------------------------------------
