@@ -5,6 +5,19 @@
 > Search in Darknet: Tor Browser
 >	Gather information of a website: ping www.abcd.com -n 1 -f -l 1500 (count of ping, DF set , packet size)
 >	Gather a wordlist from the target website: cewl -d 2 -m 5 www.abcd.com
+> Existence of a profile for a given user details in different platforms (osrframework):
+  apt update && apt -y install osrframework
+  usufy.py -n cehuser -p twitter facebook youtube
+> Existing users of pages/handlers for a given details in the all social networks (osrframework):
+  searchfy.py -q "ECCouncil"
+  
+  usufy.py	This tool that verifies if a username exists in 249 social platforms.
+  mailfy.py	This module checks if a username has been registered in up to 22 email providers.
+  searchfy.py	This module looks for profiles using full names and other info in 7 platforms.
+  domainfy.py	This module checks the existence of a given domain in up to 879 different TLD.
+  phonefy.py	This module checks if a phone number has been linked to spam practices in 4 platforms.
+  entify.py	This module looks for regular expressions using 13 patterns.
+ 
 -------------------------------------------------------------Recon-ng  START---------------------------------------------------------------
 ##Recon-ng -->
 > Open the terminal and type recon-ng
