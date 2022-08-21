@@ -27,6 +27,9 @@ nmap -open <ip> :Fast scan of first open ports only
 
 nmap -sI <ip-1> <actual-target-ip> : Zombie scan via ip-1 when actual-target-ip is not reachable by the attack host
 
+******How to search for scripts******
+ls -al /usr/share/namp/scripts/ | grep -e "<key-word>"
+
 nmap -p80 --script http-waf-detect <web-site> :Detect Firewall
 
 nmap -sV --script http-enum <ip or Web-site> :Webserver enumeration
