@@ -4,7 +4,7 @@
 > Search in Darknet: Tor Browser
 >	Gather information of a website: ping www.abcd.com -n 1 -f -l 1500 (count of ping, DF set , packet size)
 >	Gather a wordlist from the target website: cewl -d 2 -m 5 www.abcd.com
-----------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------Recon-ng  START---------------------------------------------------------------
 ##Recon-ng -->
 > Open the terminal and type recon-ng
 > help
@@ -69,5 +69,5 @@ info
 > options set SOURCE <person_name>
 > run
 
----------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------Recon-ng  END-----------------------------------------------------------
 
