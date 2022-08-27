@@ -166,6 +166,22 @@ Type services or db_services to get the whole list of the services running on th
 > search portscan
 > use scanner/portscan/syn
 > show options
+
+> set RHOSTS ip_address 
+OR 
+> hosts -R (This will set all the hosts as scanned and captured in the DB earlier)
+
+> set THREADS 100
+> run
+
+Example:
+set INTERFACE eth0
+set PORTS 22-25, 80, 110-900
+set RHOSTS 10.10.10.5-20
+set THREADS 50
+
+> use auxiliary/scanner/portscan/tcp
+> show options
 > set RHOSTS ip_address
 > set THREADS 100
 > run
@@ -177,4 +193,7 @@ Type services or db_services to get the whole list of the services running on th
 > set RHOSTS ip_address
 > set THREADS 100
 > run
+
+*********Find out the FTP version
+use auxiliary/scanner/ftp/ftp_version
 ----------------------------------------------------------MetaSpoilt  END---------------------------------------------------------
