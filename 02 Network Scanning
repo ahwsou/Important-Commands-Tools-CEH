@@ -15,7 +15,7 @@ nmap -sA <ip> : ACK scan to find the Firewall status (Filtered means Stateful Fi
 nmap <ip> :Scans first 1000 ports
 nmap <ip> -p - :Scans all the 65525 Ports
 
-
+nmap -g 80 <ip> : Source port manipulation by "g"
 nmap -D RND:3 <ip> : Decoy mode with 3 random source IP to evade firewall
 nmap -D <source-decoy-IP> <ip> : Decoy mode with decoy source IP to evade firewall
 nmap <ip> -f : Fragment the packet to evade firewall
