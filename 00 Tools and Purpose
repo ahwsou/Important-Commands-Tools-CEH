@@ -6,3 +6,4 @@ recon-ng : Find domain/sub-domain/host, Personal details, Create Report
 OSRFramework : Checking a name/person on different social media platforms
 Maltego : Diagramatic representation of the target network/source etc.
 Metaspolit : Extract info and identify vulnerabilities
+hping3 : Packet crafting, Flood, Scanning
