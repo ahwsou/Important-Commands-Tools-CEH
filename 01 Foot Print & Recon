@@ -196,4 +196,7 @@ set THREADS 50
 
 *********Find out the FTP version
 use auxiliary/scanner/ftp/ftp_version
+
+*********Export output
+hosts -o /root/Desktop/Metasploit_Scan_Results.csv
 ----------------------------------------------------------MetaSpoilt  END---------------------------------------------------------
