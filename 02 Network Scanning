@@ -1,17 +1,20 @@
 ------------------------------------------------------------NMAP START--------------------------------------------------------------------------
 nmap -sS <ip> : Default when in SUDO mode(SYN Scan -> SYN+SYN-ACK+RST : Open Port , SYN+RST : Close Port)
 nmap -sT <ip> : Default when not in SUDO mode. 3-way handshake.
-nmap -sn <ip>/24 > Output.txt
-nmap -Pn -sV <ip>
+nmap -sn <ip>/24 > Output.txt : Quick scan and output
+nmap -sV <iP> :Service versions on the ports
+nmap -sV <iP> -p <port#> :Service versions on the ports
+nmap -sP <ip> : Ping Sweep
+
 nmap -sX <ip> : Xmas Scan (Only use in UNIX/Linux, not in WINDOWS)
 nmap -sF <ip> : Fin Scan(Only use in UNIX/Linux, not in WINDOWS)
 nmap -sN <ip> : Null Scan(Only use in UNIX/Linux, not in WINDOWS)
 nmap -sA <ip> : ACK scan to find the Firewall status (Filtered means Stateful Firewall, Unfiltered means no firewall)
-namp -sn <ip> :Quick check for the 
+
+
 nmap <ip> :Scans first 1000 ports
 nmap <ip> -p - :Scans all the 65525 Ports
-nmap -sV <iP> :Service versions on the ports
-nmap -sV <iP> -p <port#> :Service versions on the ports
+
 
 nmap -D RND:3 <ip> : Decoy mode with 3 random source IP to evade firewall
 nmap -D <source-decoy-IP> <ip> : Decoy mode with decoy source IP to evade firewall
