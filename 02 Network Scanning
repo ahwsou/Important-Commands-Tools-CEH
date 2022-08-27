@@ -51,5 +51,6 @@ hping3 -S <Target IP address> -p 80 -c 5 : To send a TCP SYN request to the targ
 hping3 <ip> --flood : Flood attack
 hping3 <ip> --udp --rand-source --data 500 : To perform a UDP packet crafting
 hping3 --scan 1-3000 -S <ip> :  SYN flag scan with a port range
+hping3 -1 <subnet: a.b.c.d/24> --rand-dest -I eth0 : Entire subnet scan for live host:
 ---------------------------------------------------------------hping3 END--------------------------------------------------------------------
 
