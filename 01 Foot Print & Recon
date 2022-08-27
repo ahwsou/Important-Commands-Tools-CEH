@@ -145,6 +145,8 @@ Start Metasploit again and run the db_status to check the database status:
 **********Find live Hosts with nmap and feed to msf DB
 Do the below in msfconsole >>
 > nmap -O -oX Test ip_address/24
+OR
+> nmap -Pn -sS -A -oX Test ip_address/24
 
 We can import the Nmap results from the database:
 > db_import Test
