@@ -44,3 +44,12 @@ namp --script dns-zone-transfer --script-args dns-zone-transfer.server=<SERVER>,
 nmap --script dns-brute <DOMAIN>
 
 ------------------------------------------------------------NMAP END--------------------------------------------------------------------------
+
+---------------------------------------------------------------hping3 START--------------------------------------------------------------------
+hping3 -A <ip> -p 80 -c 5 : In this command, -A specifies setting the ACK flag, -p specifies the port to be scanned (here, 80), and -c specifies the packet count (here, 5)
+hping3 -S <Target IP address> -p 80 -c 5 : To send a TCP SYN request to the target machine
+hping3 <ip> --flood : Flood attack
+hping3 <ip> --udp --rand-source --data 500 : To perform a UDP packet crafting
+hping3 --scan 1-3000 -S <ip> :  SYN flag scan with a port range
+---------------------------------------------------------------hping3 END--------------------------------------------------------------------
+
