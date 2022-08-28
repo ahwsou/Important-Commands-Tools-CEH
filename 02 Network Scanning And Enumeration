@@ -43,6 +43,10 @@ namp -p 21 --script banner <ip> : Scan to fetch banner for the FTP port
 namp --script dns-zone-transfer --script-args dns-zone-transfer.server=<SERVER>,dns-zone-transfer.port=<PORT#>,dns-zone-transfer.domain=<DOMAIN>
 nmap --script dns-brute <DOMAIN>
 
+******NetBios
+nmap -p 139 -sV --script nbstat <ip>
+Windows: nbstat -a <ip>, nbtstat -c <ip>, net use
+
 ------------------------------------------------------------NMAP END--------------------------------------------------------------------------
 
 ---------------------------------------------------------------hping3 START--------------------------------------------------------------------
