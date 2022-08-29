@@ -7,3 +7,86 @@ OSRFramework : Checking a name/person on different social media platforms
 Maltego : Diagramatic representation of the target network/source etc.
 Metaspolit : Extract info and identify vulnerabilities
 hping3 : Packet crafting, Flood, Scanning
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------Imp Ports------------------------
+7 Echo
+19 Chargen
+20-21 FTP
+22 SSH/SCP                            
+23 Telnet
+25 SMTP
+42 WINS Replication
+43 WHOIS
+49 TACACS
+53 DNS
+67-68 DHCP/BOOTP
+69 TFTP
+70 Gopher
+79 Finger
+80 HTTP
+88 Kerberos
+102 MS Exchange
+110 POP3
+113 Ident
+119 NNTP (Usenet)
+123 NTP
+135 Microsoft RPC
+137-139 NetBIOS
+143 IMAP4
+161-162 SNMP
+177 XDMCP
+179 BGP
+201 AppleTalk
+264 BGMP
+318 TSP
+381-383 HP Openview
+389 LDAP
+411-412 DIRECT CONNECT  
+443 HTTP OVER SSL              
+445 Microsoft DS
+464 Kerberos
+465 SMTP OVER SSL             
+497 Retrospect
+500 ISAKMP                            
+512 rexec
+513 rlogin
+514 syslog
+515 LPD/LPR
+520 RIP
+521 RIPng (IPv6)
+540 UUCP
+554 RTSP
+546-547 DHCPv6
+560 rmonitor
+563 NNTP OVER SSL             
+587 SMTP
+591 FileMaker
+593 Microsof t DCOM
+631 Internet Printing
+636 LDAP OVER SSL             
+639 MSDP (PIM)
+646 LDP (MPLS)
+691 MS Exchange
+860 iSCSI
+873 rsync
+902 VMware Server
+989-990 FTP OVER SSL         
+993 IMAP4 OVER SSL         
+995 POP3 OVER SSL           
+1025 Microsof t RPC
