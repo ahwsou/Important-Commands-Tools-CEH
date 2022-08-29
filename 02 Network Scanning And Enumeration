@@ -64,3 +64,23 @@ hping3 -1 <subnet: a.b.c.d/24> --rand-dest -I eth0 : Entire subnet scan for live
 ---------------------------------------------------------------SNMP Enumeration---------------------------------------------------------------
  > snmp-check <ip>
  ------------------------------------------------------------SNMP Enumeration END-------------------------------------------------------------
+ ------------------------------------------------------------DNS Enumeration -----------------------------------------------------------------
+ 
+ Windows(Zone transfer):
+> nslookup
+> set type=ns
+> www<address>
+ [Pickup a nameserver name]
+> ls -d <nameserver name>
+
+Linux(Zone transfer):
+> dig ns www<address>
+> dig @<nameserver name> www<address> axfr
+
+Linux(DNS Enumeration):
+dnsrecon -d www<address> -z
+ 
+ 
+ ------------------------------------------------------------DNS Enumeration END--------------------------------------------------------------
+ 
+ 
