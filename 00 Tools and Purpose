@@ -9,7 +9,7 @@ Metaspolit : Extract info and identify vulnerabilities
 hping3 : Packet crafting, Flood, Scanning
 snmp-check : SNMP foot printing
 AD Explorer (Windows) : LDAP enumeration
-
+enum4linux (Linux) : Windows/Samba Enumeration
 
 
 
