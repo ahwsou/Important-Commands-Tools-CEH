@@ -10,6 +10,8 @@ hping3 : Packet crafting, Flood, Scanning
 snmp-check : SNMP foot printing
 AD Explorer (Windows) : LDAP enumeration
 enum4linux (Linux) : Windows/Samba Enumeration
+https://cve.mitre.org/ : Common Vulnerabilities
+nikto : Find vulnerability in a website
 
 
 
