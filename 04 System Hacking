@@ -219,4 +219,28 @@ You may shut down the target machine after performing post exploitation, by typi
 
 ------------------------------------------------------------------END-------------------------------------------------------------
 
+-------------------------------------Hiding Files using NTFS streams (Windows)-----------------------
+Open Windows Explorer and create a new folder called trick inside the C: drive.
+Go to C:\windows\system32 and copy the calc.exe to the trick folder.
 
+Launch the command prompt as Administrator, and navigate to C:\trick.
+cd C:\trick
+
+Create a readme.txt file, type Hello World inside of it and save the file.
+notepad readme.txt
+
+Back to command prompt and type dir to list the files on the current folder. Note the file size of readme.txt.
+
+Now hide calc.exe inside the readme.txt by typing:
+type c:\trick\calc.exe > c:\trick\readme.txt:calc.exe
+
+Type dir again and note the file size of readme.txt did not change.
+
+Back to the c:\trick and delete the calc.exe.
+
+~~~~Execute the Hidden Application
+Create a symlink: mklink backdoor.exe readme.txt:calc.exe
+
+Execute the backdoor.exe by typing: backdoor.exe
+
+------------------------------------------------END----------------------------------------------------
