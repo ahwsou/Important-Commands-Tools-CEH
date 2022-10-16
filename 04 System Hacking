@@ -244,3 +244,23 @@ Create a symlink: mklink backdoor.exe readme.txt:calc.exe
 Execute the backdoor.exe by typing: backdoor.exe
 
 ------------------------------------------------END----------------------------------------------------
+
+---------------------------Windows Audit Clearing----------------------------------
+Launch Command Prompt from the Windows Server and type:
+auditpol /get /category:*
+
+To enable the audit policies, type:
+auditpol /set /category:"system","account logon" /success:enable /failure:enable
+
+To check whether audit policies are enable, type:
+auditpol /get /category:*
+
+To clear the audit policies, type:
+auditpol /clear /y
+
+To check whether audit policies are enable, type:
+auditpol /get /category:*
+---------------------------------------END--------------------------------------
+
+-------------------------------------------LINUX Audit Clearing-----------------
+
