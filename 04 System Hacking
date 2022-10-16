@@ -263,4 +263,15 @@ auditpol /get /category:*
 ---------------------------------------END--------------------------------------
 
 -------------------------------------------LINUX Audit Clearing-----------------
+> more ~/.bash_history [See the history of commands]
+
+> history -c [Clear the stored history in the current terminal.]
+
+> export HISTSIZE=0 [Disable the BASH shell from saving the history.HISTSIZE: determines the number of commands to be saved, which will be set to 0.]
+
+> shred ~/.bash_history [Shred the history file, making its content unreadable.]
+
+> shred ~/.bash_history && cat /dev/null > .bash_history && history -c && exit
+-----------------------------------------------END-------------------------------
+
 
