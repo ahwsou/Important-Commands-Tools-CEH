@@ -13,6 +13,7 @@ enum4linux (Linux) : Windows/Samba Enumeration
 https://cve.mitre.org/ : Common Vulnerabilities
 https://cwe.mitre.org/ : Common Weakness
 nikto : Perform Web Servers and Applications Vulnerability
+virustotal.com : Malware analysis
 
 
 
