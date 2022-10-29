@@ -2,15 +2,55 @@ Overview of Active Sniffing
 ---------------------------
 Active sniffing involves sending out multiple network probes to identify access points. The following is the list of different active sniffing techniques:
 
->>MAC Flooding: Involves flooding the CAM table with fake MAC address and IP pairs until it is full. Perform MAC flooding using macof.
+>>MAC Flooding: Involves flooding the SWITCH CAM table with fake MAC address and IP pairs until it is full.
+When the MAC table fills up, the switch converts to a hub-like operation where an attacker can monitor the data being broadcast. Perform MAC flooding using macof.
 
 >>DNS Poisoning: Involves tricking a DNS server into believing that it has received authentic information when, in reality, it has not.
 
 >>ARP Poisoning: Involves constructing a large number of forged ARP request and reply packets to overload a switch.Perform ARP poisoning using arpspoof
 
->>DHCP Attacks: Involves performing a DHCP starvation attack and a rogue DHCP server attack.Perform a DHCP starvation attack using Yersinia.
+>>DHCP Attacks: Involves performing a DHCP starvation attack and a rogue DHCP server attack.
+In a DHCP starvation attack, an attacker floods the DHCP server by sending a large number of DHCP requests and uses all available IP addresses that the DHCP server
+can issue. As a result, the server cannot issue any more IP addresses, leading to a Denial-of-Service (DoS) attack.Because of this issue, valid users cannot obtain
+or renew their IP addresses, and thus fail to access their network.Perform a DHCP starvation attack using Yersinia.
 
 >>Spoofing Attack: Involves performing MAC spoofing, VLAN hopping, and STP attacks to steal sensitive information.Spoof a MAC address using TMAC and SMAC.
 
 >>Perform an Man-in-the-Middle (MITM) attack using Cain & Abel
 -----------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------Perform MAC flooding using macof---------------------------------
+> In Parrot System Open Wireshark.
+
+The Parrot Terminal window 
+> sudo su
+> macof -i eth0 -n 10 and press Enter. (-i: specifies the interface and -n: specifies the number of packets to be sent (here, 10).
+
+You can also target a single system by issuing the command:
+> macof -i eth0 -d [Target IP Address] (-d: Specifies the destination IP address).
+
+> In Wireshark Click on any captured IPv4 packet and expand the Ethernet II node in the packet details section. 
+Information regarding the source and destination MAC addresses is displayed
+------------------------------END--------------------------------------
+
+
+--------------------------Perform a DHCP starvation attack using Yersinia--------------------------
+> In Parrot System Open Wireshark.
+
+The Parrot Terminal window : 
+> sudo su
+> yersinia -I (open Yersinia in interactive mode.)
+
+To remove the Notification window, press any key, and then press h for help.
+The Available commands option appears, as shown in the screenshot.
+Press q to exit the help options.
+Press F2 to select DHCP mode. In DHCP mode, STP Fields in the lower section of the window change to DHCP Fields, as shown in the screenshot.
+Press x to list available attack options.
+The Attack Panel window appears; press 1 to start a DHCP starvation attack.
+After a few seconds, press q to stop the attack and terminate Yersinia, as shown in the screenshot.
+
+> In wireshark, Click on any DHCP packet and expand the Ethernet II node in the packet details section. 
+Information regarding the source and destination MAC addresses is displayed,
+--------------------------------END----------------------------------------------------------------
+
+
