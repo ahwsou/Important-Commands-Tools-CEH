@@ -74,6 +74,7 @@ In other words, we are informing the access point that we are the target system.
 
 After sending a few packets, press CTRL + z to stop sending the ARP packets.
 
+> Switch to the Wireshark window and you can observe the captured ARP packets
 
 > Switch back to the terminal window where arpspoof was running. 
 > arpspoof -i eth0 -t 10.10.10.B 10.10.10.A and press Enter.
@@ -82,11 +83,14 @@ Through the above command, the host system informs the target system (10.10.10.B
 
 After sending a few packets, press CTRL + z to stop sending the ARP packets.
 
-Switch back to the terminal window where arpspoof was running. Type arpspoof -i eth0 -t 10.10.10.10 10.10.10.1 and press Enter.
+> In Wireshark, you can observe the ARP packets with an alert warning “duplicate use of 10.10.10.10 detected!”
 
-Through the above command, the host system informs the target system (10.10.10.10) that it is the access point (10.10.10.1).
+Click on any ARP packet and expand the Ethernet II node in the packet details section. As shown in the screenshot, you can observe the MAC addresses of IP 
+addresses 10.10.10.A and 10.10.10.B. Here, the MAC address of the host system (Parrot Security) is XXXXXXX.
+Using arpspoof, we assigned the MAC address of the host system to the target system (Windows 10) and access point. 
+Therefore, the alert warning of a duplicate use of 10.10.10.B is displayed.
 
-After sending a few packets, press CTRL + z to stop sending the ARP packets.
-
-
------------------------------------------------------------------------------------------------
+> You can navigate to the Windows 10 machine and see the IP addresses and their corresponding MAC addresses. 
+You will observe that the MAC addresses of IP addresses 10.10.10.A and 10.10.10.C are the same, indicating the occurrence of an ARP poisoning attack, 
+where 10.10.10.C is the Parrot Security machine and 10.10.10.A is the access point.
+---------------------------------------END--------------------------------------------------------
