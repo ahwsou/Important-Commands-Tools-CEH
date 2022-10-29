@@ -1,0 +1,16 @@
+Overview of Active Sniffing
+---------------------------
+Active sniffing involves sending out multiple network probes to identify access points. The following is the list of different active sniffing techniques:
+
+>>MAC Flooding: Involves flooding the CAM table with fake MAC address and IP pairs until it is full. Perform MAC flooding using macof.
+
+>>DNS Poisoning: Involves tricking a DNS server into believing that it has received authentic information when, in reality, it has not.
+
+>>ARP Poisoning: Involves constructing a large number of forged ARP request and reply packets to overload a switch.Perform ARP poisoning using arpspoof
+
+>>DHCP Attacks: Involves performing a DHCP starvation attack and a rogue DHCP server attack.Perform a DHCP starvation attack using Yersinia.
+
+>>Spoofing Attack: Involves performing MAC spoofing, VLAN hopping, and STP attacks to steal sensitive information.Spoof a MAC address using TMAC and SMAC.
+
+>>Perform an Man-in-the-Middle (MITM) attack using Cain & Abel
+-----------------------------------------------------------------------------------------------------------------------------------------------------
