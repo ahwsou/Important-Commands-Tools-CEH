@@ -7,7 +7,12 @@ When the MAC table fills up, the switch converts to a hub-like operation where a
 
 >>DNS Poisoning: Involves tricking a DNS server into believing that it has received authentic information when, in reality, it has not.
 
->>ARP Poisoning: Involves constructing a large number of forged ARP request and reply packets to overload a switch.Perform ARP poisoning using arpspoof
+>>ARP Poisoning: Involves constructing a large number of forged ARP request and reply packets to overload a switch.
+ARP spoofing is a method of attacking an Ethernet LAN. ARP spoofing succeeds by changing the IP address of the attacker’s computer to the IP address of the 
+target computer. A forged ARP request and reply packet find a place in the target ARP cache in this process. As the ARP reply has been forged, the destination
+computer (target) sends the frames to the attacker’s computer, where the attacker can modify them before sending them to the source machine (User A) in an 
+MITM attack.arpspoof redirects packets from a target host (or all hosts) on the LAN intended for another host on the LAN by forging ARP replies. 
+This is an extremely effective way of sniffing traffic on a switch.Perform ARP poisoning using arpspoof
 
 >>DHCP Attacks: Involves performing a DHCP starvation attack and a rogue DHCP server attack.
 In a DHCP starvation attack, an attacker floods the DHCP server by sending a large number of DHCP requests and uses all available IP addresses that the DHCP server
@@ -53,4 +58,35 @@ After a few seconds, press q to stop the attack and terminate Yersinia, as shown
 Information regarding the source and destination MAC addresses is displayed,
 --------------------------------END----------------------------------------------------------------
 
+-----------------------------------------------------------------------------------------------
+> In Parrot System Open Wireshark.
 
+The Parrot Terminal window : 
+> sudo su
+> arpspoof -i eth0 -t 10.10.10.A 10.10.10.B and press Enter.
+
+(Here, 10.10.10.B is IP address of the target system [Windows 10], and 10.10.10.A is IP address of the access point or gateway)
+
+-i: specifies network interface and -t: specifies target IP address.
+
+Issuing the above command informs the access point that the target system (10.10.10.B) has our MAC address (the MAC address of host machine (Parrot Security)). 
+In other words, we are informing the access point that we are the target system.
+
+After sending a few packets, press CTRL + z to stop sending the ARP packets.
+
+
+> Switch back to the terminal window where arpspoof was running. 
+> arpspoof -i eth0 -t 10.10.10.B 10.10.10.A and press Enter.
+
+Through the above command, the host system informs the target system (10.10.10.B) that it is the access point (10.10.10.A).
+
+After sending a few packets, press CTRL + z to stop sending the ARP packets.
+
+Switch back to the terminal window where arpspoof was running. Type arpspoof -i eth0 -t 10.10.10.10 10.10.10.1 and press Enter.
+
+Through the above command, the host system informs the target system (10.10.10.10) that it is the access point (10.10.10.1).
+
+After sending a few packets, press CTRL + z to stop sending the ARP packets.
+
+
+-----------------------------------------------------------------------------------------------
