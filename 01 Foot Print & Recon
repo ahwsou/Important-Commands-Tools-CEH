@@ -35,6 +35,15 @@ tcpdump -i eth0 -v tcp and net 1.1.1.1/24 : For TCP traffic of entire network ra
 tcpdump -w /root/Desktop/tcpdump1.pcap -i eth0 -v src 1.1.1.1
 ------------------------------------------------------------BASIC END---------------------------------------------------------------------------
 
+------------------------------------------------Wire Shark----------------------------------
+> ip.src == x.y.a.b && http.request.method == POST
+> Click Display filter, select String from the drop-down options. Click Packet list, select Packet details from the drop-down options, 
+and click Narrow & Wide and select Narrow (UTF-8 / ASCII) from the drop-down options. 
+In the field next to String, type <search string> and click the Find button.
+>
+
+
+
 ------------------------------------------------------------OSRframework START------------------------------------------------------------------
 > Existence of a profile for a given user details in different platforms (osrframework):
   apt update && apt -y install osrframework
