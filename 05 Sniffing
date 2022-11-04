@@ -95,7 +95,7 @@ You will observe that the MAC addresses of IP addresses 10.10.10.A and 10.10.10.
 where 10.10.10.C is the Parrot Security machine and 10.10.10.A is the access point.
 ---------------------------------------END--------------------------------------------------------
 
------------------------------------------------Detect ARP poisoning in a switch-based network-------------------------
+-----------------------------------------------Perform MITM in a switch-based network with Cain & Abel -------------------------
 >> Use Cain & Abel to perform ARP poisioning and conduct MITM attack
 >> Use Wireshark to detect the attack
 
@@ -122,5 +122,7 @@ in the right-hand pane to activate the plus (+) icon.Click the plus (+) icon, a 
 
 ~~Switch to Windows x.y.z.a where Cain is running
 > Irrespective of a successful login, Cain & Abel captures the password entered during login.
-
+> Click the Passwords tab from the bottom of the Cain window. Click FTP from the left-hand pane to view the sniffed password for ftp e.f.g.h,
 -------------------------------------------END------------------------------------------------------------------------
+
+
