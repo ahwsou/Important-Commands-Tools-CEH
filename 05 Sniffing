@@ -125,4 +125,35 @@ in the right-hand pane to activate the plus (+) icon.Click the plus (+) icon, a 
 > Click the Passwords tab from the bottom of the Cain window. Click FTP from the left-hand pane to view the sniffed password for ftp e.f.g.h,
 -------------------------------------------END------------------------------------------------------------------------
 
+-----------------------------------------------Detect MITM & ARP Poisioning in a switch-based network with Cain & Abel + Wireshark -------------------------
 
+>> Use Cain & Abel to perform ARP poisioning and conduct MITM attack
+>> Use Wireshark to detect the attack
+
+> Continue the above steps for ARP Poisioning via Cain
+> Go to a.b.c.d and ping to e.f.g.h
+> Switch to Cain machine and open Wireshark.
+> The Wireshark Network Analyzer window appears; click Edit in the menu bar and select Preferences….
+> The Wireshark . Preferences window appears; expand the Protocols node.
+> Scroll-down in the Protocols node and select the ARP/RARP option.
+> From the right-hand pane, click the Detect ARP request storms checkbox and ensure that the Detect duplicate IP address configuration checkbox is checked; click OK.
+> Now, double-click on the adapter associated with your network (here, Ethernet) to start capturing the network packets in Wireshark
+Wireshark begins to capture the traffic between the two machines, as shown in the screenshot.
+
+> Switch to the Cain & Abel window to observe the packets flowing between the two machines.
+
+> Now, switch to Wireshark and click the Stop packet capturing icon to stop the packet capturing.
+> Click Analyze from the menu bar and select Expert Information from the drop-down options.
+> The Wireshark . Expert Information window appears; click to expand the Warning node labeled Duplicate IP address configured (10.10.10.13), running on the ARP/RARP protocol.
+> Arrange the Wireshark . Expert Information window above the Wireshark window so that you can view the packet number and the Packet details section.
+> In the Wireshark . Expert Information window, click any packet (here, 216).
+> On selecting the packet number, Wireshark highlights the packet, and its associated information is displayed under the packet details section. Close the Wireshark . Expert Information window.
+> The warnings highlighted in yellow indicate that duplicate IP addresses have been detected at one MAC address, as shown in the screenshot.
+
+ARP spoofing succeeds by changing the IP address of the attacker’s computer to the IP address of the target computer. 
+A forged ARP request and reply packet find a place in the target ARP cache in this process.
+As the ARP reply has been forged, the destination computer (target) sends frames to the attacker’s computer, where the attacker can modify the frames 
+before sending them to the source machine (User A) in an MITM attack. At this point, the attacker can launch a DoS attack by associating a non-existent
+MAC address with the IP address of the gateway or may passively sniff the traffic, and then forward it to the target destination.
+This concludes the demonstration of detecting ARP poisoning in a switch-based network.
+---------------------------------END----------------------------------------------------------------
