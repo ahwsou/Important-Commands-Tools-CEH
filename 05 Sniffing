@@ -12,7 +12,7 @@ ARP spoofing is a method of attacking an Ethernet LAN. ARP spoofing succeeds by 
 target computer. A forged ARP request and reply packet find a place in the target ARP cache in this process. As the ARP reply has been forged, the destination
 computer (target) sends the frames to the attacker’s computer, where the attacker can modify them before sending them to the source machine (User A) in an 
 MITM attack.arpspoof redirects packets from a target host (or all hosts) on the LAN intended for another host on the LAN by forging ARP replies. 
-This is an extremely effective way of sniffing traffic on a switch.Perform ARP poisoning using arpspoof
+This is an extremely effective way of sniffing traffic on a switch.Perform ARP poisoning using arpspoof.
 
 >>DHCP Attacks: Involves performing a DHCP starvation attack and a rogue DHCP server attack.
 In a DHCP starvation attack, an attacker floods the DHCP server by sending a large number of DHCP requests and uses all available IP addresses that the DHCP server
@@ -58,7 +58,7 @@ After a few seconds, press q to stop the attack and terminate Yersinia, as shown
 Information regarding the source and destination MAC addresses is displayed,
 --------------------------------END----------------------------------------------------------------
 
------------------------------------------------------------------------------------------------
+----------------------------------------------Perform ARP poisoning using arpspoof-------------------------------------------------
 > In Parrot System Open Wireshark.
 
 The Parrot Terminal window : 
