@@ -94,3 +94,33 @@ Therefore, the alert warning of a duplicate use of 10.10.10.B is displayed.
 You will observe that the MAC addresses of IP addresses 10.10.10.A and 10.10.10.C are the same, indicating the occurrence of an ARP poisoning attack, 
 where 10.10.10.C is the Parrot Security machine and 10.10.10.A is the access point.
 ---------------------------------------END--------------------------------------------------------
+
+-----------------------------------------------Detect ARP poisoning in a switch-based network-------------------------
+>> Use Cain & Abel to perform ARP poisioning and conduct MITM attack
+>> Use Wireshark to detect the attack
+
+~~Cain & Abel
+> Click on Cain icon on Windows x.y.z.a
+> Click Configure from the menu bar to configure an ethernet card.
+> The Configuration Dialog window appears. By default, the Sniffer tab is selected. Ensure that the Adapter associated with the IP address of the machine is selected; 
+then, click OK.
+> Click the Start/Stop Sniffer icon on the toolbar to begin sniffing.
+> A Cain pop-up appears and displays a Warning message; click OK.
+> Now, click the Sniffer tab.
+> Click the plus (+) icon or right-click in the window and select Scan MAC Addresses to scan the network for hosts.
+The MAC Address Scanner window appears. Check the All hosts in my subnet radio button and select the All Tests checkbox; then, click OK.
+Cain & Abel starts scanning for MAC addresses and lists all those found.
+After completing the scan, a list of all active IP addresses along with their corresponding MAC addresses is displayed
+> Now, click the APR tab at the bottom of the window.APR options appear in the left-hand pane. Click anywhere on the topmost section
+in the right-hand pane to activate the plus (+) icon.Click the plus (+) icon, a New ARP Poison Routing window appears, from which we can add IPs to listen to traffic.
+> To monitor the traffic between two systems  click to select a.b.c.d from the left-hand pane and e.f.g.h from the right-hand pane; click OK.
+> Click on the Start/Stop APR icon to start capturing ARP packets.
+
+~~Switch to a.b.c.d
+> The Command Prompt window appears; type ftp e.f.g.h and press Enter.
+> When prompted for a User, type “Jason” and press Enter; for a Password, type “qwerty” and press Enter.
+
+~~Switch to Windows x.y.z.a where Cain is running
+> Irrespective of a successful login, Cain & Abel captures the password entered during login.
+
+-------------------------------------------END------------------------------------------------------------------------
