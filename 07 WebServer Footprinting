@@ -50,7 +50,7 @@ Telnet will perform the banner grabbing and gather information such as content t
 last modified date, accept ranges, ETag, and server information.
 ------------------------------------END-----------------------------------
 
--------------------------------------Web Server Information using Nmap Scripting Engine (NSE)------------------
+-------------------------------------Web Server Information using Nmap Scripting Engine (NSE) (Parrot)------------------
 Nmap, along with Nmap Scripting Engine, can extract a lot of valuable information from the target web server. 
 In addition to Nmap commands, Nmap Scripting Engine (NSE)provides scripts that reveal various useful information 
 about the target web server.
@@ -74,3 +74,46 @@ shows if the method is enabled or not.
 >This command will scan the host and attempt to determine whether a web server is being monitored by an IPS, IDS, or WAF.
 >This command will probe the target host with malicious payloads and detect the changes in the response code.
 -------------------------------------------END-----------------------------
+
+
+----------------------------------Uniscan Web Server Fingerprinting (Parrot)----------------------
+Uniscan is a versatile server fingerprinting tool that not only performs simple commands like ping, traceroute,
+and nslookup, but also does static, dynamic, and stress checks on a web server. Apart from scanning websites, 
+uniscan also performs automated Bing and Google searches on provided IPs. Uniscan takes all of this data and combines
+them into a comprehensive report file for the user.
+
+~~Win 2016 Server(a.b.c.d)
+> Enable the webserver in Win 2016 system so that it can be scanned by the Parrot system
+>WAMP Server shortcut icon from Desktop to start WAMP Server services. 
+>Alternatively, you can also launch the WAMP Server services from the Start menu apps
+>Wait until the WAMP Server icon turns Green in the Notification area. Leave the Windows Server 2016 machine running.
+
+~~Parrot Machine
+>Parrot Terminal window appears. In the terminal window, type sudo su and press Enter
+>type cd and press Enter to jump to the root directory.
+>In the terminal window, type uniscan -h and hit Enter to display the uniscan help options.
+>The help menu appears, as shown in the screenshot. First, use the -q command to search for the directories of the web server.
+>In the terminal window, type uniscan -u http://a.b.c.d:8080/CEH -q and hit Enter to start scanning for directories.
+>Here, a.b.c.d is the IP address of the Windows Server 2016 machine. This may vary in your lab environment.
+>In the above command, the -u switch is used to provide the target URL, and the -q switch 
+is used to scan the directories in the web server.
+>Uniscan starts performing different tests on the webserver and discovering web directories, as shown in the screenshot.
+>Scroll to analyze the complete output of the scan. It should take approximately 10 minutes for the scan to finish.
+
+>Now, run uniscan using two options together. Here -w and -e are used together to 
+enable the file check (robots.txt and sitemap.xml file). In the terminal window, 
+type uniscan -u http://a.b.c.d:8080/CEH -we and hit Enter to start the scan.
+>Uniscan starts the file check and displays the results, as shown in the screenshot.
+>Scroll to analyze the complete scan result. It should take approximately 10 minutes for the scan to finish.
+
+>Now, use the dynamic testing option by giving the command -d. 
+>Type uniscan -u http://a.b.c.d:8080/CEH -d and hit Enter to start a dynamic scan on the web server.
+>Uniscan starts performing dynamic tests, obtaining more information about email-IDs, Source code disclosures, and external hosts.
+>Scroll to analyze the complete output of the scan. It should take approximately 10 minutes for the scan to finish.
+>Uniscan displays the PHP info, as shown in the screenshot below. Close the terminal window.
+
+>Click Place from the top-section of the Desktop and click Home Folder from the drop-down options.
+>Click File System from the left-pane and click usr --> share --> uniscan --> report.
+>Right-click on <a.b.c.d>.html. Hover your mouse cursor on Open With and click Firefox from the menu to view the scan report.
+>The report opens in the browser, giving you all scan details in a more comprehensive manner.
+--------------------------------------------END-------------------------------------
