@@ -44,3 +44,19 @@ IP address, plugin information, and HTTP header information, as shown in the scr
 results returned by WhatWeb as a text file.This will generate a report with the name MovieScope_Report
 and save this file in the root folder.
 ------------------------------------------END------------------------------
+
+
+------------------------------Detect Load Balancers (dig and lbd)--------------------
+A Parrot Terminal window appears
+>type dig yahoo.com and press Enter.
+The result appears, displaying the available load balancers of the target website, 
+as the screenshot demonstrates. Here, a single host resolves to multiple IP addresses, 
+which possibly indicates that the host is using a load balancer. dig command provides detailed results 
+and is used to identify whether the target domain is resolving to multiple IP addresses.
+
+>Now, type lbd yahoo.com and press Enter.
+The result appears, displaying the available DNS load balancers used by the target website, as shown in the screenshot.
+lbd (load balancing detector) detects if a given domain uses DNS and http load balancing via the Server:
+and Date: headers and the differences between server answers. 
+It analyzes the data received from application responses to detect load balancers.
+--------------------------------------END----------------------------------------
