@@ -117,3 +117,14 @@ type uniscan -u http://a.b.c.d:8080/CEH -we and hit Enter to start the scan.
 >Right-click on <a.b.c.d>.html. Hover your mouse cursor on Open With and click Firefox from the menu to view the scan report.
 >The report opens in the browser, giving you all scan details in a more comprehensive manner.
 --------------------------------------------END-------------------------------------
+
+-------------------------------------------Crack FTP credentials using a DictionaryAttack----------------
+First, find the open FTP port using Nmap, and then perform a dictionary attack using the THC Hydra tool.
+Here, we will use a sample password file (Passwords.txt) containing a list of passwords to crack the FTP credentials
+on the target machine.
+
+>Parrot Terminal window appears. In the terminal window, type sudo su and press Enter
+>type cd and press Enter to jump to the root directory.
+>In the terminal window, type nmap -p 21 [IP Address of Windows 10], and press Enter. 
+(Perform an Nmap scan on the target machine (Windows 10) to check if the FTP port is open.)
+---------------------------END-----------------------------
