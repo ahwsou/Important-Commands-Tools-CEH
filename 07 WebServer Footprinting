@@ -127,4 +127,34 @@ on the target machine.
 >type cd and press Enter to jump to the root directory.
 >In the terminal window, type nmap -p 21 [IP Address of Windows 10], and press Enter. 
 (Perform an Nmap scan on the target machine (Windows 10) to check if the FTP port is open.)
+> if the Port 21 is open , then check if an FTP server is hosted on the Windows 10 machine.
+>Type ftp [IP Address of Windows 10] and press Enter. You will be prompted to enter user credentials. 
+The need for credentials implies that an FTP server is hosted on the machine.
+>Try entering random usernames and passwords in an attempt to gain FTP access.
+The password you enter will not be visible on the screen.
+>As shown in the screenshot, you will not be able to log in to the FTP server. Close the terminal window.
+>Now, to attempt to gain access to the FTP server, perform a dictionary attack using the THC Hydra tool.
+>Click Places from the top-section of the Desktop and click Desktop from the drop-down options.
+>Navigate to CEHv11 Module 13 Hacking Web Servers folder and copy Wordlists folder.
+>Press Ctrl+C to copy the folder.
+>Paste the copied folder (Wordlists) on the Desktop. Close the window
+>Press Ctrl+V to paste the folder.
+---NEW Window in Parrot---
+>Click the MATE Terminal icon at the top of the Desktop window to open a Terminal window.
+>A Parrot Terminal window appears. In the terminal window, type sudo su and press Enter to run the programs as a root user.
+>Now, type cd and press Enter to jump to the root directory.
+>In the terminal window, type hydra -L /home/attacker/Desktop/Wordlists/Usernames.txt -P /home/attacker/Desktop/Wordlists/Passwords.txt ftp://[IP Address of Windows 10] and press Enter.
+>Hydra tries various combinations of usernames and passwords (present in the Usernames.txt and Passwords.txt files) on the FTP server and outputs cracked usernames and passwords, as shown in the screenshot.
+This might take some time to complete.
+On completion of the password cracking, the cracked credentials appear, as shown in the screenshot.
+>Try to log in to the FTP server using one of the cracked username and password combinations. 
+>In the terminal window, type ftp [IP Address of Windows 10], and press Enter.
+> Enter user credentials to check whether you can successfully log in to the server.
+>On entering the credentials, you will successfully be able to log in to the server. 
+An ftp terminal appears.
+>Now you can remotely access the FTP server hosted on the Windows 10 machine.
+>Type mkdir Hacked and press Enter to remotely create a directory named Hacked on the Windows 10 machine through the ftp terminal.
+
+~~~Click Windows 10 to switch to the Windows 10 machine and navigate to C:\FTP.
+>View the directory named Hacked, as shown in the screenshot:
 ---------------------------END-----------------------------
