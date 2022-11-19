@@ -60,3 +60,29 @@ lbd (load balancing detector) detects if a given domain uses DNS and http load b
 and Date: headers and the differences between server answers. 
 It analyzes the data received from application responses to detect load balancers.
 --------------------------------------END----------------------------------------
+
+---------------------------------------Identify Web Server Directories----------------------
+Web servers host the web applications, so misconfigurations while hosting these web applications may 
+lead to the exposure of critical files and directories over the Internet. A professional ethical hacker 
+or pen tester must identify the target web application’s files and directories exposed on the Internet 
+using various automated tools such as Nmap and Gobuster. This information further helps to gather sensitive
+information stored in the files and folders.
+
+Here, we will use Nmap and Gobuster tool to identify web server directories on the target website.
+>A Parrot Terminal window appears; type nmap -sV --script=http-enum [target domain or IP address] 
+(here, the target website is www.<site>.com) and press Enter.
+The result appears, displaying open ports and services, along with their version.
+Scroll-down in the result and observe the identified web server directories under the http-enum section
+>Now, we shall copy the wordlist file (common.txt) from a shared network drive. We will use this file in the Gobuster tool.
+Minimize the Terminal window.
+>Click Places from the top-section of the Desktop and click Desktop from the drop-down options.
+>Navigate to CEHv11 Module 14 Hacking Web Applications folder and copy common.txt file.
+Press Ctrl+C to copy the folder.
+Paste the copied file (common.txt) on the Desktop. Close the window.
+Press Ctrl+V to paste the folder.
+>Now, switch back to the terminal window, type gobuster dir -u [Target Website] -w /home/attacker/Desktop/common.txt, and press Enter.
+(dir: uses directory or file brute-forcing mode, -u: specifies the target URL (here, www.moviescope.com), 
+and -w: is the wordlist file used for directory brute-forcing (here, common.txt).
+>The result appears, displaying the identified web server directories
+
+--------------------------END------------------
