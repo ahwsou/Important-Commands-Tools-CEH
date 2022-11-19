@@ -1,0 +1,25 @@
+
+--------Web Application Reconnaissance---------------------------
+> Use tools such as Netcraft (https://www.netcraft.com), SmartWhois (https://www.tamos.com), WHOIS Lookup (http://whois.domaintools.com), 
+and Batch IP Converter (http://www.sabsoft.com) to perform the Whois lookup.
+>Use tools such as Professional Toolset (https://tools.dnsstuff.com), DNSRecon (https://github.com), and DNS Records (https://network-tools.com),
+Domain Dossier (https://centralops.net) to perform DNS interrogation.
+
+>Now, we will perform port scanning to gather information about the open ports and
+services running on the machine hosting the target website.
+~~~Parrot Machine
+>Parrot Terminal window appears. In the terminal window, type sudo su and press Enter
+>Now, type cd and press Enter to jump to the root directory.
+>In the Parrot Terminal window, type nmap -T4 -A -v [Target Web Application] 
+(here, the target web application is www.<site>.com) and press Enter to perform a port and service discovery scan.
+In this command, -T4: specifies setting time template (0-5), -A: specifies aggressive scan, 
+and -v: enables the verbose output (include all hosts and ports in the output).
+The result appears, displaying the open ports and services running on the machine hosting the target website.
+
+>Now, perform banner grabbing to identify the make, model, and version of the target web server software.
+>In the terminal window, type telnet www.<site>.com 80 and press Enter to establish a telnet connection with the target machine.
+Port 80 is the port number assigned to the commonly used Internet communication protocol, Hypertext Transfer Protocol (HTTP).
+>The Trying a.b.c.d… message appears; type GET / HTTP/1.0 and press Enter two times.
+>The result appears, displaying information related to the server name and its version, technology used.
+Here, the server is identified as Microsoft-IIS/10.0 and the technology used is ASP.NET.
+---------------------------------------------END--------------------------------------
