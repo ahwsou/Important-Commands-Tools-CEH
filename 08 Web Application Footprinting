@@ -23,3 +23,24 @@ Port 80 is the port number assigned to the commonly used Internet communication 
 >The result appears, displaying information related to the server name and its version, technology used.
 Here, the server is identified as Microsoft-IIS/10.0 and the technology used is ASP.NET.
 ---------------------------------------------END--------------------------------------
+
+
+------------------------------Perform Web Application Reconnaissance using WhatWeb------------------
+WhatWeb identifies websites and recognizes web technologies, including content management systems (CMS), 
+blogging platforms, statistics and analytics packages, JavaScript libraries, web servers, and embedded devices. 
+It also identifies version numbers, email addresses, account IDs, web framework modules, SQL errors, and more.
+Here, we will perform web application reconnaissance using the WhatWeb tool.
+
+>Parrot Terminal window appears. In the terminal window, type sudo su and press Enter
+>Now, type cd and press Enter to jump to the root directory.
+>In the Terminal window, type whatweb and press Enter. It displays a list of the commands available with WhatWeb.
+>Now, type whatweb [Target Web Application] (here, the target web application is www.<site>.com) 
+and press Enter to perform website footprinting on the target website.
+The result appears, displaying the MovieScope website infrastructure, as shown in the screenshot.
+>In the terminal, type whatweb -v [Target Web Application] press Enter to run a verbosity scan on the target website.
+The result appears, displaying a detailed report on the target website such as its 
+IP address, plugin information, and HTTP header information, as shown in the screenshot.
+>Now, type whatweb --log-verbose=MovieScope_Report www.moviescope.com and press Enter to export the 
+results returned by WhatWeb as a text file.This will generate a report with the name MovieScope_Report
+and save this file in the root folder.
+------------------------------------------END------------------------------
