@@ -86,3 +86,9 @@ and -w: is the wordlist file used for directory brute-forcing (here, common.txt)
 >The result appears, displaying the identified web server directories
 
 --------------------------END------------------
+
+--------------------Perform Web Application Vulnerability Scanning using Vega (Windows)----------------
+Vega is a web application scanner used to test the security of web applications. 
+It helps you to find and validate SQL Injection, XSS, inadvertently disclosed sensitive information, and other vulnerabilities.
+
+----------------------END-----------------------------
