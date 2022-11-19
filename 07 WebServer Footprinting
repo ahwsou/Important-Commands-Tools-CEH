@@ -29,7 +29,7 @@ link grabber, and Robots.txt scanner to gather information about the target web 
 --------------------------------------------------------END---------------------------------------
 
 
---------------------------------------------Footprint a Web Server using Netcat and Telnet (Parrot)----------------------
+--------------------------------------------Banner Grabbing a Web Server using Netcat and Telnet (Parrot)----------------------
 Telnet helps users perform banner-grabbing attacks. It probes HTTP servers to determine the Server field in the HTTP response header.
 
 >Parrot Terminal window appears. In the terminal window, type sudo su and press Enter
