@@ -81,3 +81,8 @@ In the above query, you are pinging the www.certifiedhacker.com website using an
 the sent buffer size and -t refers to pinging the specific host.
 ------------------------------------------------END--------------------------------------
 
+--------------------------------------Perform an SQL IA for MSSQL & Extract Databases using sqlmap--------------
+
+
+------------------------------END-----------------------------
+
