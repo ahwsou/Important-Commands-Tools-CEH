@@ -32,3 +32,12 @@ The vulnerable link is also displayed, as shown in the screenshot.
 >You will observe that information regarding all the available user accounts appears under the View Profile tab.
 Scroll down to view the user account information for all users.
 --------------------------------------------------------END-------------------------------------
+
+
+----------------------------Detect SQL Injection Vulnerabilities using OWASP ZAP (Windows)-------------------
+OWASP Zed Attack Proxy (ZAP) is an integrated penetration testing tool for finding vulnerabilities in web applications. 
+It offers automated scanners and a set of tools that allow you to find security vulnerabilities manually. It is designed to be used by people with a wide range of security experience, and as such is ideal for developers and functional testers who are new to penetration testing.
+
+In this task, we will use OWASP ZAP to test a web application for SQL injection vulnerabilities.
+
+------------------------------END-------------------------------
