@@ -22,6 +22,14 @@ Anti_DDoS_Guardian : Can be used to detect the DOS
 Vega : Vega is a web application scanner used to test the security of web applications (Windows)
 
 
+WebApplication Vulnerability Analysis:
+1) Vega (Windows) - No reporting as such
+2) OWASP Zed Attack Proxy (ZAP) (Windows) - reporting, SQL injection detection, overall good
+3) Nessus (Windows) [03] - Reporting capability
+4) gvm-start (Linux) [03]
+5) Nikto (Linux) [03] - reporting
+6) DSSS (Linux) [09] - SQL injection detection
+
 
 
 
