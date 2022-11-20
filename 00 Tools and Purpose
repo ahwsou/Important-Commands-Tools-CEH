@@ -1,13 +1,22 @@
-Foot Printing & Recon:
-------------------------
-theHarvester : Fetch email of a n organization
-cewl : Gather a wordlist from the target website
-OSRFramework : Checking a name/person on different social media platforms
+01 Foot Print & Recon 
+    theHarvester : Fetch email of a n organization
+    cewl : Gather a wordlist from the target website
+    OSRFramework : Checking a name/person on different social media platforms
+    Wire Shark
+    recon-ng : Find domain/sub-domain/host, Personal details, Create Report
+    Metaspolit :Extract info and identify vulnerabilities, SMB version, FTP version, Port Scan, Reporting, various attacks, previllege esclations etc.
+
+02 Network Scanning And Enumeration
+    NMAP : Zone transfer
+    hping3 : Scannig, packet crafting, flooding(DDOS)
+    SNMP Enumeration
+    nslookup,dig,dnsrecon : DNS Enumeration,Zone transfer
+    Windows and Samba Hosts
 
 Maltego : Diagramatic representation of the target network/source etc.
 
 recon-ng : Find domain/sub-domain/host, Personal details, Create Report
-Metaspolit : Extract info and identify vulnerabilities, SMB version, FTP version, Port Scan, Reporting
+Metaspolit :[04]  Extract info and identify vulnerabilities, SMB version, FTP version, Port Scan, Reporting, various attacks, previllege esclations etc.
 
 snmp-check : SNMP foot printing
 AD Explorer (Windows) : LDAP enumeration
@@ -33,7 +42,10 @@ WebApplication Vulnerability Analysis:
 5) Nikto (Linux) [03] - reporting
 6) DSSS (Linux) [09] - SQL injection detection
 
-
+John-the-ripper :[04] Password cracking
+Hiding Files using NTFS streams (Windows)
+Windows Audit Clearing
+LINUX Audit Clearing
 
 
 
