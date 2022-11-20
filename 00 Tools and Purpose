@@ -2,25 +2,28 @@ Foot Printing & Recon:
 ------------------------
 theHarvester : Fetch email of a n organization
 cewl : Gather a wordlist from the target website
-recon-ng : Find domain/sub-domain/host, Personal details, Create Report
 OSRFramework : Checking a name/person on different social media platforms
+
 Maltego : Diagramatic representation of the target network/source etc.
-Metaspolit : Extract info and identify vulnerabilities
-hping3 : Packet crafting, Flood, Scanning
+
+recon-ng : Find domain/sub-domain/host, Personal details, Create Report
+Metaspolit : Extract info and identify vulnerabilities, SMB version, FTP version, Port Scan, Reporting
+
 snmp-check : SNMP foot printing
 AD Explorer (Windows) : LDAP enumeration
 enum4linux (Linux) : Windows/Samba Enumeration
+
 https://cve.mitre.org/ : Common Vulnerabilities
 https://cwe.mitre.org/ : Common Weakness
-nikto : Perform Web Servers and Applications Vulnerability
 virustotal.com : Malware analysis
+
 Analyze a network : Omnipeek Network Protocol Analyzer
 Analyze a network : the SteelCentral Packet Analyzer
+
 MITM : Cain & Abel
+hping3 : Packet crafting, Flood, Scanning
 High Orbit Ion Cannon (HOIC) : Can be used in Windows to carry out DOS
 Anti_DDoS_Guardian : Can be used to detect the DOS
-Vega : Vega is a web application scanner used to test the security of web applications (Windows)
-
 
 WebApplication Vulnerability Analysis:
 1) Vega (Windows) - No reporting as such
