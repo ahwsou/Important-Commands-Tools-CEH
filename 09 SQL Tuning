@@ -1,4 +1,4 @@
-Damn Small SQLi Scanner (DSSS) is a fully functional SQL injection vulnerability scanner that supports GET and POST parameters. \
+Damn Small SQLi Scanner (DSSS) is a fully functional SQL injection vulnerability scanner that supports GET and POST parameters. 
 DSSS scans web applications for various SQL injection vulnerabilities.
 
 Here, we will use DSSS to detect SQL injection vulnerabilities in a web application.
