@@ -1,0 +1,31 @@
+
+
+-------------------------Detect SQL Injection Vulnerabilities using DSSS----------------
+Parrot Terminal window appears. 
+>In the terminal window, type sudo su and press Enter to run the programs as a root user.
+>Now, type cd and press Enter to jump to the root directory.
+>In the MATE Terminal type cd DSSS and press Enter to navigate to the DSSS folder which is alredy downloaded.
+>In the terminal window, type python3 dsss.py and press Enter to view a list of available options in the DSSS application
+>Now, minimize the Terminal window and click on the Firefox icon in the top section of Desktop to launch Firefox.
+>In the Mozilla Firefox window, type http://www.<site>.com/ in the address bar and press Enter. 
+A Login page loads; enter the Username and Password as sam and test, respectively. Click the Login button.
+>Once you are logged into the website, click the View Profile tab from the menu bar; 
+and when the page has loaded, make a note of the URL in the address bar of the browser.
+
+>Right-click anywhere on the webpage and click Inspect Element (Q) from the context menu
+>The Developer Tools frame appears in the lower section of the browser window. 
+Click the Console tab, type document.cookie in the lower-left corner of the browser, and press Enter.
+>Select the cookie value, then right-click and copy it, . Minimize the web browser.
+
+>Switch to a terminal window and type python3 dsss.py -u "http://www.<site>.com/viewprofile.aspx?id=1" --cookie="[cookie value which you have copied]" 
+and press Enter.
+In this command, -u specifies the target URL and --cookie specifies the HTTP cookie header value.
+The above command causes DSSS to scan the target website for SQL injection vulnerabilities.
+The result appears, showing that the target website (www.<site>.com) is vulnerable to blind SQL injection attacks. 
+The vulnerable link is also displayed, as shown in the screenshot.
+
+>Highlight the vulnerable website link from the parrot terminal, right-click it, and, from the options, click Copy.
+>Switch to Mozilla Firefox; in a new tab, paste the copied link in the address bar and press Enter.
+>You will observe that information regarding all the available user accounts appears under the View Profile tab.
+Scroll down to view the user account information for all users.
+--------------------------------------------------------END-------------------------------------
