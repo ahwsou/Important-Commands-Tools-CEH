@@ -13,6 +13,40 @@
     nslookup,dig,dnsrecon : DNS Enumeration,Zone transfer
     Windows and Samba Hosts
 
+03 Vulnerability Analysis
+    NIKTO (Linux) ---- Perform Web Servers and Applications Vulnerability Scanning
+    NESSUS (Win) ---- Perform Applications Vulnerability Scanning
+    OpenVAS (Linux) --- Perform Applications Vulnerability Scanning
+
+04 System Hacking
+    Responder & JOHN-THE-RIPPER (For Windows password  cracking)
+    Gaining Access ---- Exploiting Client Side Vulnerabilities
+    Escalating Privileage
+    Hacking Windows with Malicious Office Document using TheFatRat
+    Backdoor Technique / Hacking Windows using Metasploit
+    Hiding Files using NTFS streams (Windows)
+    Windows Audit Clearing
+    LINUX Audit Clearing
+    
+05 Sniffing
+    Perform MAC flooding using macof
+    Perform a DHCP starvation attack using Yersinia
+    Perform ARP poisoning using arpspoof
+    Perform MITM in a switch-based network with Cain & Abel
+    Detect MITM & ARP Poisioning in a switch-based network with Cain & Abel + Wireshark
+    
+06 Denial of Service
+    Metsploit msfconsole to be used for DOS 
+    Perform SYN flooding using hping3
+    High Orbit Ion Cannon (HOIC) -- Can be used in Windows to carry out DOS
+    Anti_DDoS_Guardian -- Can be used to detect the DOS
+    
+ 07 WebServer Footprinting
+    Ghost Eye gathers information such as Whois lookup, DNS lookup, EtherApe, Nmap port scan, ETC.
+    Banner Grabbing a Web Server using Netcat and Telnet
+    Web Server Information using Nmap Scripting Engine (NSE)
+    Uniscan Web Server Fingerprinting
+    Crack FTP credentials using Hydra by DictionaryAttack
 Maltego : Diagramatic representation of the target network/source etc.
 
 recon-ng : Find domain/sub-domain/host, Personal details, Create Report
