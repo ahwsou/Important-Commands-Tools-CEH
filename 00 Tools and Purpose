@@ -47,6 +47,20 @@
     Web Server Information using Nmap Scripting Engine (NSE)
     Uniscan Web Server Fingerprinting
     Crack FTP credentials using Hydra by DictionaryAttack
+    
+ 08 Web Application Footprinting
+    Generic (netcraft, nmap, banner grabbing by telnet)
+    Perform Web Application Reconnaissance using WhatWeb
+    Detect Load Balancers (dig and lbd)
+    Identify Web Server Directories (NSE, gobuster by using file input)
+    Perform Web Application Vulnerability Scanning using Vega (Windows
+    
+ 09 SQL Tuning
+    Detect SQL Injection Vulnerabilities using DSSS
+    Detect SQL Injection Vulnerabilities using OWASP ZAP (Windows)
+    SQL Injection Queries
+    Perform an SQL IA for MSSQL & Extract Databases using sqlmap
+    
 Maltego : Diagramatic representation of the target network/source etc.
 
 recon-ng : Find domain/sub-domain/host, Personal details, Create Report
